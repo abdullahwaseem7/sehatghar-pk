@@ -1,3 +1,4 @@
+// v2
 import Link from "next/link";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL, WHATSAPP_NUMBER } from "@/lib/constants";
 
