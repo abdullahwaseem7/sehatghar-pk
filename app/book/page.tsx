@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { CONTACT_PHONE_DISPLAY } from "@/lib/constants";
+import { supabase } from "@/lib/supabase";
 
 const LAHORE_AREAS = [
   "Gulberg",
@@ -34,7 +35,8 @@ export default function BookPage() {
   const [name,  setName]  = useState("");
   const [phone, setPhone] = useState("");
   const [area,  setArea]  = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
@@ -56,10 +58,25 @@ export default function BookPage() {
     letterSpacing: "0.04em",
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim() || !area) return;
-    router.push("/book/confirm?ref=CAH-2025-" + Math.floor(1000 + Math.random() * 9000));
+    setLoading(true);
+    setError("");
+    const ref = "SGH-" + Math.floor(1000 + Math.random() * 9000);
+    const { error: dbError } = await supabase.from("bookings").insert({
+      name: name.trim(),
+      phone: phone.trim(),
+      area,
+      ref,
+      status: "pending",
+    });
+    setLoading(false);
+    if (dbError) {
+      setError("Something went wrong. Please try again or call us directly.");
+      return;
+    }
+    router.push("/book/confirm?ref=" + ref);
   };
 
   return (
@@ -129,13 +146,19 @@ export default function BookPage() {
               </select>
             </div>
 
+            {/* Error */}
+            {error && (
+              <p style={{ fontSize: "13px", color: "#991B1B", backgroundColor: "#FEE2E2", borderRadius: "8px", padding: "10px 14px" }}>{error}</p>
+            )}
+
             {/* Submit */}
             <button
               type="submit"
-              style={{ width: "100%", padding: "13px", borderRadius: "8px", border: "none", backgroundColor: "#0D7A6E", color: "#fff", fontWeight: 700, fontSize: "15px", cursor: "pointer", marginTop: "4px" }}
+              disabled={loading}
+              style={{ width: "100%", padding: "13px", borderRadius: "8px", border: "none", backgroundColor: loading ? "#5A9E96" : "#0D7A6E", color: "#fff", fontWeight: 700, fontSize: "15px", cursor: loading ? "not-allowed" : "pointer", marginTop: "4px" }}
               className="hover:bg-[#0A5E55] transition-colors"
             >
-              Request a Callback
+              {loading ? "Sending…" : "Request a Callback"}
             </button>
 
             {/* Reassurance */}
