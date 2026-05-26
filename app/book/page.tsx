@@ -69,10 +69,15 @@ export default function BookPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name.trim(), phone: phone.trim(), area, ref }),
       });
-      if (!res.ok) throw new Error("failed");
-    } catch {
+      if (!res.ok) {
+        const data = await res.json();
+        setLoading(false);
+        setError("Error: " + JSON.stringify(data));
+        return;
+      }
+    } catch (e) {
       setLoading(false);
-      setError("Something went wrong. Please try again or call us directly.");
+      setError("Error: " + String(e));
       return;
     }
     setLoading(false);
