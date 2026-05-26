@@ -2,12 +2,12 @@ import Link from "next/link";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
 
 const NURSE_CARDS = [
-  { name: "Sana Malik",   cat: "Qualified Nurse", city: "Lahore",    rating: "4.9", avail: true,  gender: "female" },
-  { name: "Ahmed Raza",   cat: "Qualified Nurse", city: "Karachi",   rating: "4.8", avail: true,  gender: "male"   },
-  { name: "Fatima Zahra", cat: "Attendant",        city: "Islamabad", rating: "4.9", avail: true,  gender: "female" },
+  { name: "Rukhsar", cat: "Qualified Nurse", city: "Lahore", gender: "female" },
+  { name: "Rashid",  cat: "Qualified Nurse", city: "Lahore", gender: "male"   },
+  { name: "Bushra",  cat: "Attendant",        city: "Lahore", gender: "female" },
 ];
 
-function MiniNurseCard({ name, cat, city, rating, avail, gender }: typeof NURSE_CARDS[0]) {
+function MiniNurseCard({ name, cat, city, gender }: typeof NURSE_CARDS[0]) {
   const initials = name.split(" ").map(n => n[0]).join("");
   const isFemale = gender === "female";
   return (
@@ -23,14 +23,9 @@ function MiniNurseCard({ name, cat, city, rating, avail, gender }: typeof NURSE_
         <div style={{ fontWeight: 600, fontSize: "13px", color: "#0A2E2B" }}>{name}</div>
         <div style={{ fontSize: "11px", color: "#5A7572" }}>{cat} · {city}</div>
       </div>
-      <div className="flex flex-col items-end gap-1">
-        <span style={{ fontSize: "11px", fontWeight: 600, color: "#0D7A6E" }}>★ {rating}</span>
-        <span style={{
-          fontSize: "10px", fontWeight: 500, padding: "2px 8px", borderRadius: "20px",
-          backgroundColor: avail ? "#D1FAE5" : "#FEE2E2",
-          color: avail ? "#065F46" : "#991B1B",
-        }}>{avail ? "Available" : "Busy"}</span>
-      </div>
+      <span style={{ fontSize: "10px", fontWeight: 500, padding: "2px 8px", borderRadius: "20px", backgroundColor: "#D1FAE5", color: "#065F46", flexShrink: 0 }}>
+        Available
+      </span>
     </div>
   );
 }
@@ -46,7 +41,7 @@ export default function Hero() {
             {/* Badge */}
             <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#EEF9F7", border: "1px solid #B2DED9", borderRadius: "20px", padding: "5px 12px", marginBottom: "18px" }}>
               <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#1A9E6E", flexShrink: 0 }} />
-              <span style={{ fontSize: "12px", fontWeight: 500, color: "#0D7A6E" }}>Verified &amp; Certified Nurses Across Pakistan</span>
+              <span style={{ fontSize: "12px", fontWeight: 500, color: "#0D7A6E" }}>Verified &amp; Certified Nurses in Lahore</span>
             </div>
 
             <h1 style={{ fontSize: "clamp(26px, 5vw, 40px)", fontWeight: 700, color: "#0A2E2B", lineHeight: 1.2, marginBottom: "16px" }}>
@@ -58,7 +53,7 @@ export default function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-3">
               <Link href="/book"
                 style={{ backgroundColor: "#0D7A6E", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "12px 28px", borderRadius: "8px", display: "inline-block" }}
                 className="hover:bg-[#0A5E55] transition-colors">
@@ -73,20 +68,6 @@ export default function Hero() {
                 {CONTACT_PHONE_DISPLAY}
               </a>
             </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-6">
-              {[
-                { val: "1,200+", label: "Verified Nurses" },
-                { val: "15+",    label: "Cities" },
-                { val: "4.9★",   label: "Avg Rating" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div style={{ fontSize: "22px", fontWeight: 700, color: "#0D7A6E" }}>{s.val}</div>
-                  <div style={{ fontSize: "12px", color: "#5A7572" }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right — nurse cards */}
@@ -94,7 +75,7 @@ export default function Hero() {
             {NURSE_CARDS.map((c) => <MiniNurseCard key={c.name} {...c} />)}
             <div style={{ textAlign: "center", marginTop: "4px" }}>
               <Link href="/nurses" style={{ fontSize: "13px", color: "#0D7A6E", fontWeight: 500 }}>
-                View all nurses →
+                View all caregivers →
               </Link>
             </div>
           </div>

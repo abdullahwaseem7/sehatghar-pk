@@ -2,17 +2,19 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import { MOCK_CAREGIVERS, MOCK_REVIEWS } from "@/lib/mockData";
+import { MOCK_CAREGIVERS } from "@/lib/mockData";
 import { PRICES } from "@/lib/constants";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export default async function NurseProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const nurse = MOCK_CAREGIVERS.find(n => n.id === (id ?? "")) ?? MOCK_CAREGIVERS[0];
-  const reviews = MOCK_REVIEWS.filter(r => r.caregiver_id === nurse.id);
   const isFemale = nurse.gender === "female";
   const isNurse = nurse.category === "qualified_nurse";
   const price = PRICES[nurse.category];
   const initials = nurse.name.split(" ").map(n => n[0]).join("");
+
+  const reviewMsg = encodeURIComponent(`Hi! I'd like to leave a review for ${nurse.name}.`);
 
   return (
     <>
@@ -54,10 +56,8 @@ export default async function NurseProfilePage({ params }: { params: Promise<{ i
                       </span>
                     </div>
 
-                    <div style={{ display: "flex", gap: "16px", marginTop: "12px", flexWrap: "wrap" }}>
+                    <div style={{ marginTop: "10px" }}>
                       <span style={{ fontSize: "13px", color: "#5A7572" }}>📍 {nurse.city}</span>
-                      <span style={{ fontSize: "13px", color: "#5A7572" }}>⏳ {nurse.experience_years} years experience</span>
-                      <span style={{ fontSize: "13px", color: "#E8A020", fontWeight: 600 }}>★ {nurse.rating_avg} ({nurse.review_count} reviews)</span>
                     </div>
                   </div>
                 </div>
@@ -87,39 +87,26 @@ export default async function NurseProfilePage({ params }: { params: Promise<{ i
                 <p style={{ fontSize: "14px", color: "#3D5E5A", lineHeight: 1.7 }}>{nurse.bio}</p>
               </div>
 
-              {/* Specialisations */}
-              <div style={{ backgroundColor: "#fff", border: "0.5px solid #B2DED9", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
-                <h2 style={{ fontSize: "16px", fontWeight: 700, color: "#0A2E2B", marginBottom: "12px" }}>Specialisations</h2>
-                <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-                  {nurse.specialisations.map(s => (
-                    <span key={s} style={{ padding: "6px 16px", borderRadius: "20px", backgroundColor: "#EEF9F7", border: "0.5px solid #B2DED9", fontSize: "13px", color: "#0D7A6E", fontWeight: 500 }}>
-                      {s}
-                    </span>
-                  ))}
-                </div>
+              {/* Write a Review */}
+              <div style={{ backgroundColor: "#fff", border: "0.5px solid #B2DED9", borderRadius: "12px", padding: "24px" }}>
+                <h2 style={{ fontSize: "16px", fontWeight: 700, color: "#0A2E2B", marginBottom: "6px" }}>Leave a Review</h2>
+                <p style={{ fontSize: "13px", color: "#5A7572", marginBottom: "16px", lineHeight: 1.6 }}>
+                  Had a good experience with {nurse.name}? We&apos;d love to hear about it. Send us your review on WhatsApp and we&apos;ll feature it on the site.
+                </p>
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${reviewMsg}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "#25D366", color: "#fff", fontWeight: 600, fontSize: "13px", padding: "11px 20px", borderRadius: "8px" }}
+                  className="hover:opacity-90 transition-opacity"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  Write a Review on WhatsApp
+                </a>
               </div>
 
-              {/* Reviews */}
-              <div style={{ backgroundColor: "#fff", border: "0.5px solid #B2DED9", borderRadius: "12px", padding: "24px" }}>
-                <h2 style={{ fontSize: "16px", fontWeight: 700, color: "#0A2E2B", marginBottom: "16px" }}>
-                  Patient Reviews ({nurse.review_count})
-                </h2>
-                {reviews.length > 0 ? reviews.map(r => (
-                  <div key={r.id} style={{ borderBottom: "1px solid #EEF9F7", paddingBottom: "16px", marginBottom: "16px" }}>
-                    <div style={{ display: "flex", gap: "3px", marginBottom: "6px" }}>
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill={i < r.rating ? "#E8A020" : "#D1D5DB"} stroke="none">
-                          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/>
-                        </svg>
-                      ))}
-                    </div>
-                    <p style={{ fontSize: "13px", color: "#3D5E5A", lineHeight: 1.6, marginBottom: "8px" }}>{r.comment}</p>
-                    <div style={{ fontSize: "12px", color: "#5A7572" }}>{r.user_name} · {r.created_at}</div>
-                  </div>
-                )) : (
-                  <p style={{ fontSize: "13px", color: "#5A7572" }}>No reviews yet. Be the first to review after your booking!</p>
-                )}
-              </div>
             </div>
 
             {/* Sticky sidebar */}
@@ -131,34 +118,21 @@ export default async function NurseProfilePage({ params }: { params: Promise<{ i
                 </div>
 
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", justifyContent: "center", marginBottom: "20px" }}>
-                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: nurse.is_available ? "#1A9E6E" : "#C0392B" }} />
-                  <span style={{ fontSize: "13px", fontWeight: 600, color: nurse.is_available ? "#1A9E6E" : "#C0392B" }}>
-                    {nurse.availability_status === "available_now" ? "Available Now" : nurse.availability_status === "available_today" ? "Available Today" : "Currently Unavailable"}
-                  </span>
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#1A9E6E" }} />
+                  <span style={{ fontSize: "13px", fontWeight: 600, color: "#1A9E6E" }}>Available</span>
                 </div>
 
                 <Link href={`/book?caregiver=${nurse.id}`}
                   style={{ display: "block", width: "100%", textAlign: "center", backgroundColor: "#0D7A6E", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "13px", borderRadius: "8px", marginBottom: "10px" }}
                   className="hover:bg-[#0A5E55] transition-colors">
-                  Book This Nurse
+                  Book Now
                 </Link>
-                <a href={`https://wa.me/923001234567?text=I%20want%20to%20book%20${encodeURIComponent(nurse.name)}`}
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi! I'd like to enquire about ${nurse.name}`)}`}
                   target="_blank" rel="noopener noreferrer"
                   style={{ display: "block", width: "100%", textAlign: "center", backgroundColor: "#25D366", color: "#fff", fontWeight: 600, fontSize: "13px", padding: "12px", borderRadius: "8px" }}
                   className="hover:opacity-90 transition-opacity">
                   WhatsApp to Enquire
                 </a>
-
-                <div style={{ marginTop: "20px", paddingTop: "20px", borderTop: "1px solid #EEF9F7" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-                    <span style={{ fontSize: "12px", color: "#5A7572" }}>Rating</span>
-                    <span style={{ fontSize: "12px", fontWeight: 600, color: "#E8A020" }}>★ {nurse.rating_avg}</span>
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span style={{ fontSize: "12px", color: "#5A7572" }}>Experience</span>
-                    <span style={{ fontSize: "12px", fontWeight: 600, color: "#0A2E2B" }}>{nurse.experience_years} years</span>
-                  </div>
-                </div>
               </div>
             </aside>
 

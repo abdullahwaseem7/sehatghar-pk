@@ -66,7 +66,7 @@ export default function ServicesSection() {
                   backgroundColor: gender === g ? (g === "female" ? "#F4E8F4" : "#EEF9F7") : "transparent",
                   color: gender === g ? (g === "female" ? "#7A3D8A" : "#0D7A6E") : "#5A7572",
                 }}>
-                {g === "female" ? "👩 Female" : "👨 Male"}
+                {g === "female" ? "Female" : "Male"}
               </button>
             ))}
           </div>

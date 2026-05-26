@@ -5,17 +5,12 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { MOCK_CAREGIVERS } from "@/lib/mockData";
-import { CITIES } from "@/lib/constants";
 import type { Caregiver } from "@/types";
 
 function NurseCard({ c }: { c: Caregiver }) {
   const initials = c.name.split(" ").map(n => n[0]).join("");
   const isFemale = c.gender === "female";
   const isNurse = c.category === "qualified_nurse";
-
-  const availColor =
-    c.availability_status === "available_now"   ? "#1A9E6E" :
-    c.availability_status === "available_today" ? "#E8A020" : "#C0392B";
 
   return (
     <div style={{ backgroundColor: "#fff", border: "0.5px solid #B2DED9", borderRadius: "12px", padding: "18px 16px", display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -46,26 +41,14 @@ function NurseCard({ c }: { c: Caregiver }) {
           </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "4px", flexShrink: 0 }}>
-          <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: availColor, display: "inline-block" }} />
-          <span style={{ fontSize: "11px", color: availColor, fontWeight: 600 }}>
-            {c.availability_status === "available_now" ? "Now" : c.availability_status === "available_today" ? "Today" : "Busy"}
-          </span>
-        </div>
+        <span style={{ fontSize: "10px", fontWeight: 500, padding: "2px 8px", borderRadius: "20px", backgroundColor: "#D1FAE5", color: "#065F46", flexShrink: 0 }}>
+          Available
+        </span>
       </div>
 
-      {/* Meta */}
-      <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
+      {/* Location */}
+      <div>
         <span style={{ fontSize: "12px", color: "#5A7572" }}>📍 {c.city}</span>
-        <span style={{ fontSize: "12px", color: "#5A7572" }}>⏳ {c.experience_years} yrs exp</span>
-        <span style={{ fontSize: "12px", color: "#E8A020", fontWeight: 600 }}>★ {c.rating_avg} ({c.review_count})</span>
-      </div>
-
-      {/* Tags */}
-      <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
-        {c.specialisations.slice(0, 3).map(s => (
-          <span key={s} style={{ fontSize: "11px", padding: "3px 10px", borderRadius: "20px", backgroundColor: "#F5FAF9", border: "0.5px solid #B2DED9", color: "#3D5E5A" }}>{s}</span>
-        ))}
       </div>
 
       {/* Buttons */}
@@ -88,16 +71,10 @@ function NurseCard({ c }: { c: Caregiver }) {
 export default function NursesPage() {
   const [gender, setGender]     = useState<"" | "male" | "female">("");
   const [category, setCategory] = useState<"" | "qualified_nurse" | "attendant">("");
-  const [city, setCity]         = useState("");
-  const [avail, setAvail]       = useState(false);
-  const [highRating, setHighRating] = useState(false);
 
   const filtered = MOCK_CAREGIVERS.filter(c => {
     if (gender && c.gender !== gender) return false;
     if (category && c.category !== category) return false;
-    if (city && c.city !== city) return false;
-    if (avail && !c.is_available) return false;
-    if (highRating && c.rating_avg < 4.7) return false;
     return true;
   });
 
@@ -109,9 +86,9 @@ export default function NursesPage() {
         <div style={{ backgroundColor: "#fff", borderBottom: "1px solid #B2DED9", padding: "28px 0" }}>
           <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
             <h1 style={{ fontSize: "24px", fontWeight: 700, color: "#0A2E2B", marginBottom: "4px" }}>Find a Nurse or Attendant</h1>
-            <p style={{ fontSize: "13px", color: "#5A7572" }}>{MOCK_CAREGIVERS.length} verified caregivers available across Pakistan</p>
+            <p style={{ fontSize: "13px", color: "#5A7572" }}>{MOCK_CAREGIVERS.length} verified caregivers available in Lahore</p>
 
-            {/* Gender toggle — always visible in header */}
+            {/* Gender toggle */}
             <div style={{ display: "flex", gap: "8px", marginTop: "16px", backgroundColor: "#F5FAF9", border: "1px solid #B2DED9", borderRadius: "10px", padding: "4px", width: "fit-content" }}>
               {(["", "female", "male"] as const).map((g) => (
                 <button key={g} onClick={() => setGender(g)}
@@ -119,7 +96,7 @@ export default function NursesPage() {
                     backgroundColor: gender === g ? (g === "female" ? "#F4E8F4" : g === "male" ? "#EEF9F7" : "#0D7A6E") : "transparent",
                     color: gender === g ? (g === "female" ? "#7A3D8A" : g === "male" ? "#0D7A6E" : "#fff") : "#5A7572",
                   }}>
-                  {g === "" ? "All" : g === "female" ? "👩 Female" : "👨 Male"}
+                  {g === "" ? "All" : g === "female" ? "Female" : "Male"}
                 </button>
               ))}
             </div>
@@ -148,34 +125,8 @@ export default function NursesPage() {
                   ))}
                 </div>
 
-                {/* City */}
-                <div style={{ marginBottom: "16px" }}>
-                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#5A7572", display: "block", marginBottom: "8px" }}>CITY</label>
-                  <select value={city} onChange={e => setCity(e.target.value)}
-                    style={{ width: "100%", padding: "8px 10px", borderRadius: "8px", border: "1px solid #B2DED9", fontSize: "13px", color: "#3D5E5A", backgroundColor: "#fff" }}>
-                    <option value="">All Cities</option>
-                    {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
-                  </select>
-                </div>
-
-                {/* Availability */}
-                <div style={{ marginBottom: "16px" }}>
-                  <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
-                    <input type="checkbox" checked={avail} onChange={e => setAvail(e.target.checked)} style={{ accentColor: "#0D7A6E" }} />
-                    <span style={{ fontSize: "13px", color: "#3D5E5A" }}>Available Now / Today</span>
-                  </label>
-                </div>
-
-                {/* Rating */}
-                <div>
-                  <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
-                    <input type="checkbox" checked={highRating} onChange={e => setHighRating(e.target.checked)} style={{ accentColor: "#0D7A6E" }} />
-                    <span style={{ fontSize: "13px", color: "#3D5E5A" }}>4.7★ and above</span>
-                  </label>
-                </div>
-
-                <button onClick={() => { setGender(""); setCategory(""); setCity(""); setAvail(false); setHighRating(false); }}
-                  style={{ marginTop: "20px", width: "100%", padding: "9px", borderRadius: "8px", border: "1px solid #B2DED9", fontSize: "12px", color: "#5A7572", backgroundColor: "transparent", cursor: "pointer" }}>
+                <button onClick={() => { setGender(""); setCategory(""); }}
+                  style={{ marginTop: "8px", width: "100%", padding: "9px", borderRadius: "8px", border: "1px solid #B2DED9", fontSize: "12px", color: "#5A7572", backgroundColor: "transparent", cursor: "pointer" }}>
                   Clear Filters
                 </button>
               </div>

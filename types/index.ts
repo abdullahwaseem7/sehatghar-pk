@@ -12,16 +12,16 @@ export interface Caregiver {
   category: Category;
   pnc_number?: string;
   city: string;
-  experience_years: number;
+  experience_years?: number;
   bio: string;
   photo_url?: string;
   is_available: boolean;
   availability_status: AvailabilityStatus;
   is_verified: boolean;
-  rating_avg: number;
-  review_count: number;
+  rating_avg?: number;
+  review_count?: number;
   services: string[];
-  specialisations: string[];
+  specialisations?: string[];
 }
 
 export interface Booking {
