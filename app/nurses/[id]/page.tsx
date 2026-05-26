@@ -3,8 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { MOCK_CAREGIVERS } from "@/lib/mockData";
-import { PRICES } from "@/lib/constants";
-import { WHATSAPP_NUMBER } from "@/lib/constants";
+import { PRICES, WHATSAPP_NUMBER } from "@/lib/constants";
 
 export default async function NurseProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
