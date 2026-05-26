@@ -5,7 +5,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { CONTACT_PHONE_DISPLAY } from "@/lib/constants";
-import { supabase } from "@/lib/supabase";
 
 const LAHORE_AREAS = [
   "Gulberg",
@@ -64,18 +63,19 @@ export default function BookPage() {
     setLoading(true);
     setError("");
     const ref = "SGH-" + Math.floor(1000 + Math.random() * 9000);
-    const { error: dbError } = await supabase.from("bookings").insert({
-      name: name.trim(),
-      phone: phone.trim(),
-      area,
-      ref,
-      status: "pending",
-    });
-    setLoading(false);
-    if (dbError) {
+    try {
+      const res = await fetch("/api/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name.trim(), phone: phone.trim(), area, ref }),
+      });
+      if (!res.ok) throw new Error("failed");
+    } catch {
+      setLoading(false);
       setError("Something went wrong. Please try again or call us directly.");
       return;
     }
+    setLoading(false);
     router.push("/book/confirm?ref=" + ref);
   };
 
