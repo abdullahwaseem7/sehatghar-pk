@@ -29,21 +29,6 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            {[
-              { val: "1,200+", label: "Verified Caregivers" },
-              { val: "15+",    label: "Cities" },
-              { val: "10,000+",label: "Shifts Completed" },
-              { val: "4.9★",   label: "Average Rating" },
-            ].map(s => (
-              <div key={s.label} style={{ backgroundColor: "#fff", border: "0.5px solid #B2DED9", borderRadius: "12px", padding: "20px", textAlign: "center" }}>
-                <div style={{ fontSize: "24px", fontWeight: 700, color: "#0D7A6E" }}>{s.val}</div>
-                <div style={{ fontSize: "12px", color: "#5A7572", marginTop: "4px" }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-
           {/* Values */}
           <h2 style={{ fontSize: "18px", fontWeight: 700, color: "#0A2E2B", marginBottom: "16px" }}>What We Stand For</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
