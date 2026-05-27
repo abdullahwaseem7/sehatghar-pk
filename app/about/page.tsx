@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+
+export const metadata: Metadata = {
+  title: "About Us | SehatGhar.pk Home Nursing Service Lahore",
+  description:
+    "Learn about SehatGhar.pk — Lahore's trusted home nursing platform connecting families with PNC-registered nurses and trained attendants. Verified, affordable, available 24/7.",
+  alternates: { canonical: "https://sehatghar-pk.vercel.app/about" },
+};
 
 export default function AboutPage() {
   return (

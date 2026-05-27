@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { ATTENDANT_SERVICES, PRICES } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Patient Attendant at Home in Lahore | SehatGhar.pk",
+  description:
+    "Book a trained male or female patient attendant at home in Lahore. Elderly care, personal hygiene, companionship and overnight duty. Rs. 3,000 per 12-hour shift.",
+  alternates: { canonical: "https://sehatghar-pk.vercel.app/services/attendant" },
+};
 
 export default function AttendantPage() {
   return (

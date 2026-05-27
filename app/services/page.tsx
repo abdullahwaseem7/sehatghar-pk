@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { QUALIFIED_NURSE_SERVICES, ATTENDANT_SERVICES, PRICES } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Home Nursing Services in Lahore | Qualified Nurse & Attendant | SehatGhar.pk",
+  description:
+    "Post-operative care, elderly care, paediatric care, diabetic care and more — provided by PNC-registered nurses and trained attendants at your home in Lahore. Book now.",
+  alternates: { canonical: "https://sehatghar-pk.vercel.app/services" },
+};
 
 export default function ServicesPage() {
   return (

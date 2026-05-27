@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL, WHATSAPP_NUMBER } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Contact Us | SehatGhar.pk | Home Nurse Lahore 0305-8489988",
+  description:
+    "Contact SehatGhar.pk to book a home nurse or patient attendant in Lahore. Call or WhatsApp 0305-8489988. Available 24/7 for enquiries and bookings.",
+  alternates: { canonical: "https://sehatghar-pk.vercel.app/contact" },
+};
 
 export default function ContactPage() {
   return (
