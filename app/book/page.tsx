@@ -70,14 +70,13 @@ export default function BookPage() {
         body: JSON.stringify({ name: name.trim(), phone: phone.trim(), area, ref }),
       });
       if (!res.ok) {
-        const data = await res.json();
         setLoading(false);
-        setError("Error: " + JSON.stringify(data));
+        setError("Something went wrong. Please call us directly.");
         return;
       }
-    } catch (e) {
+    } catch {
       setLoading(false);
-      setError("Error: " + String(e));
+      setError("Something went wrong. Please call us directly.");
       return;
     }
     setLoading(false);
