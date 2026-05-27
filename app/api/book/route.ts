@@ -6,6 +6,7 @@ export async function POST(req: NextRequest) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
+  // Save to Supabase
   const res = await fetch(`${supabaseUrl}/rest/v1/bookings`, {
     method: "POST",
     headers: {
@@ -22,6 +23,17 @@ export async function POST(req: NextRequest) {
     console.error("Supabase error:", res.status, error);
     return NextResponse.json({ error, status: res.status }, { status: 500 });
   }
+
+  // Send ntfy notification
+  await fetch("https://ntfy.sh/sehatghar-bookings-sawar", {
+    method: "POST",
+    headers: {
+      "Title": "New Booking — SehatGhar",
+      "Priority": "high",
+      "Tags": "hospital",
+    },
+    body: `Name: ${name}\nPhone: ${phone}\nArea: ${area}\nRef: ${ref}`,
+  });
 
   return NextResponse.json({ success: true });
 }
