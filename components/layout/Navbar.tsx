@@ -12,11 +12,12 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-          <div style={{ backgroundColor: "#0D7A6E", borderRadius: "8px" }} className="w-8 h-8 flex items-center justify-center">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-          </div>
+          <svg width="36" height="36" viewBox="0 0 200 200" fill="none">
+            <path d="M28 96 L100 36 L172 96" stroke="#0A2E2B" strokeWidth="14" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M44 92 V158 a8 8 0 0 0 8 8 H148 a8 8 0 0 0 8 -8 V92" stroke="#0A2E2B" strokeWidth="14" strokeLinejoin="round" fill="none"/>
+            <rect x="89" y="96" width="22" height="48" rx="3" fill="#0D7A6E"/>
+            <rect x="76" y="109" width="48" height="22" rx="3" fill="#0D7A6E"/>
+          </svg>
           <span style={{ color: "#0A2E2B", fontWeight: 700, fontSize: "17px" }}>
             SehatGhar<span style={{ color: "#0D7A6E" }}>.pk</span>
           </span>
