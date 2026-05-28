@@ -11,8 +11,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sehatghar-pk.vercel.app"),
   title: {
-    default: "SehatGhar.pk | Home Nursing Service in Lahore | Nurse at Home",
-    template: "%s | SehatGhar.pk",
+    default: "mySehatGhar | Home Nursing Service in Lahore | Nurse at Home",
+    template: "%s | mySehatGhar",
   },
   description:
     "Book a verified nurse or patient attendant at home in Lahore. PNC-registered qualified nurses and trained attendants for post-op care, elderly care, and more. Available 24/7. Call 0305-8489988.",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     "SehatGhar",
     "sehatghar.pk",
   ],
-  authors: [{ name: "SehatGhar.pk" }],
-  creator: "SehatGhar.pk",
-  publisher: "SehatGhar.pk",
+  authors: [{ name: "mySehatGhar" }],
+  creator: "mySehatGhar",
+  publisher: "mySehatGhar",
   robots: {
     index: true,
     follow: true,
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_PK",
     url: "https://sehatghar-pk.vercel.app",
-    siteName: "SehatGhar.pk",
-    title: "SehatGhar.pk | Home Nursing Service in Lahore",
+    siteName: "mySehatGhar",
+    title: "mySehatGhar | Home Nursing Service in Lahore",
     description:
       "Book a verified nurse or patient attendant at home in Lahore. PNC-registered, background-checked, available 24/7. Call 0305-8489988.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SehatGhar.pk | Home Nursing Service in Lahore",
+    title: "mySehatGhar | Home Nursing Service in Lahore",
     description:
       "Book a verified nurse or patient attendant at home in Lahore. Available 24/7.",
   },

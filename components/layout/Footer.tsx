@@ -18,7 +18,7 @@ export default function Footer() {
                 <rect x="76" y="109" width="48" height="22" rx="3" fill="#0D7A6E"/>
               </svg>
               <span style={{ color: "#fff", fontWeight: 700, fontSize: "17px" }}>
-                SehatGhar
+                mySehatGhar
               </span>
             </div>
             <p style={{ fontSize: "13px", lineHeight: "1.7", color: "#B2DED9" }}>
