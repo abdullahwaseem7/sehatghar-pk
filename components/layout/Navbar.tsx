@@ -19,7 +19,7 @@ export default function Navbar() {
             <rect x="76" y="109" width="48" height="22" rx="3" fill="#0D7A6E"/>
           </svg>
           <span style={{ color: "#0A2E2B", fontWeight: 700, fontSize: "17px" }}>
-            mySehatGhar
+            mySehatGhar<span style={{ color: "#0D7A6E", fontWeight: 500 }}>.com</span>
           </span>
         </Link>
 
