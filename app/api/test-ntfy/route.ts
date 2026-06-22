@@ -5,7 +5,7 @@ export async function GET() {
     const res = await fetch("https://ntfy.sh/sehatghar-bookings-sawar", {
       method: "POST",
       headers: {
-        "Title": "Test - SehatGhar",
+        "Title": "Test - Sehat Connect",
         "Priority": "high",
         "Tags": "white_check_mark",
       },

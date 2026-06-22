@@ -4,7 +4,7 @@ export async function GET() {
   await fetch("https://ntfy.sh/sehatghar-bookings-sawar", {
     method: "POST",
     headers: {
-      "Title": "SehatGhar - System Online",
+      "Title": "Sehat Connect - System Online",
       "Priority": "min",
       "Tags": "white_check_mark",
     },

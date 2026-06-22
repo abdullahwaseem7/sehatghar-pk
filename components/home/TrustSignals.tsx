@@ -61,7 +61,7 @@ export default function TrustSignals() {
       <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 700, color: "#0A2E2B", marginBottom: "8px" }}>
-            Why Choose SehatGhar?
+            Why Choose Sehat Connect?
           </h2>
           <p style={{ fontSize: "14px", color: "#5A7572" }}>Every caregiver is rigorously vetted so your family stays safe</p>
         </div>

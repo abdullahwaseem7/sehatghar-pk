@@ -3,7 +3,7 @@ import { WHATSAPP_NUMBER } from "@/lib/constants";
 export default function WhatsAppButton() {
   return (
     <a
-      href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20would%20like%20to%20book%20a%20nurse%20through%20SehatGhar.pk`}
+      href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20would%20like%20to%20book%20a%20nurse%20through%20Sehat Connect`}
       target="_blank"
       rel="noopener noreferrer"
       title="Chat on WhatsApp"

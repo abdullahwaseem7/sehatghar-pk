@@ -6,10 +6,10 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { QUALIFIED_NURSE_SERVICES, ATTENDANT_SERVICES, PRICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Home Nursing Services in Lahore | Qualified Nurse & Attendant | SehatGhar.pk",
+  title: "Home Nursing Services in Lahore | Qualified Nurse & Attendant | Sehat Connect",
   description:
     "Post-operative care, elderly care, paediatric care, diabetic care and more — provided by PNC-registered nurses and trained attendants at your home in Lahore. Book now.",
-  alternates: { canonical: "https://sehatghar-pk.vercel.app/services" },
+  alternates: { canonical: "https://mysehatconnect.com/services" },
 };
 
 export default function ServicesPage() {

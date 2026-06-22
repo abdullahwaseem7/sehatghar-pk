@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     fetch("https://ntfy.sh/sehatghar-bookings-sawar", {
       method: "POST",
       headers: {
-        "Title": "New Booking - SehatGhar",
+        "Title": "New Booking - Sehat Connect",
         "Priority": "high",
         "Tags": "hospital",
       },

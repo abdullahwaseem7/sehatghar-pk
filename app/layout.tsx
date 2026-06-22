@@ -9,10 +9,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sehatghar-pk.vercel.app"),
+  metadataBase: new URL("https://mysehatconnect.com"),
   title: {
-    default: "mySehatGhar | Home Nursing Service in Lahore | Nurse at Home",
-    template: "%s | mySehatGhar",
+    default: "Sehat Connect | Home Nursing Service in Lahore | Nurse at Home",
+    template: "%s | Sehat Connect",
   },
   description:
     "Book a verified nurse or patient attendant at home in Lahore. PNC-registered qualified nurses and trained attendants for post-op care, elderly care, and more. Available 24/7. Call 0305-8489988.",
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     "nursing care at home Pakistan",
     "PNC registered nurse home visit",
     "attendant for patient at home",
-    "SehatGhar",
-    "sehatghar.pk",
+    "Sehat Connect",
+    "sehat-connect.pk",
   ],
-  authors: [{ name: "mySehatGhar" }],
-  creator: "mySehatGhar",
-  publisher: "mySehatGhar",
+  authors: [{ name: "Sehat Connect" }],
+  creator: "Sehat Connect",
+  publisher: "Sehat Connect",
   robots: {
     index: true,
     follow: true,
@@ -52,20 +52,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PK",
-    url: "https://sehatghar-pk.vercel.app",
-    siteName: "mySehatGhar",
-    title: "mySehatGhar | Home Nursing Service in Lahore",
+    url: "https://mysehatconnect.com",
+    siteName: "Sehat Connect",
+    title: "Sehat Connect | Home Nursing Service in Lahore",
     description:
       "Book a verified nurse or patient attendant at home in Lahore. PNC-registered, background-checked, available 24/7. Call 0305-8489988.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "mySehatGhar | Home Nursing Service in Lahore",
+    title: "Sehat Connect | Home Nursing Service in Lahore",
     description:
       "Book a verified nurse or patient attendant at home in Lahore. Available 24/7.",
   },
   alternates: {
-    canonical: "https://sehatghar-pk.vercel.app",
+    canonical: "https://mysehatconnect.com",
   },
 };
 

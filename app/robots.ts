@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/dashboard/", "/login/"],
     },
-    sitemap: "https://sehatghar-pk.vercel.app/sitemap.xml",
+    sitemap: "https://mysehatconnect.com/sitemap.xml",
   };
 }

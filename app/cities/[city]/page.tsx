@@ -82,7 +82,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           <div style={{ backgroundColor: "#fff", border: "0.5px solid #B2DED9", borderRadius: "12px", padding: "28px 24px" }}>
             <h2 style={{ fontSize: "16px", fontWeight: 700, color: "#0A2E2B", marginBottom: "12px" }}>Home Nursing Services in {cityName}</h2>
             <p style={{ fontSize: "13px", color: "#3D5E5A", lineHeight: 1.8 }}>
-              SehatGhar.pk provides professional home nursing care in {cityName} with fully verified caregivers. Our services include post-operative care, elderly care, paediatric nursing, ICU step-down care, diabetic care, and overnight night duty — delivered by PNC-registered qualified nurses or trained attendants, depending on your need.
+              Sehat Connect provides professional home nursing care in {cityName} with fully verified caregivers. Our services include post-operative care, elderly care, paediatric nursing, ICU step-down care, diabetic care, and overnight night duty — delivered by PNC-registered qualified nurses or trained attendants, depending on your need.
             </p>
             <p style={{ fontSize: "13px", color: "#3D5E5A", lineHeight: 1.8, marginTop: "10px" }}>
               All nurses in {cityName} are Pakistan Nursing Council registered, CNIC verified, and background-screened. You can request a male or female caregiver. Pricing is transparent: Rs. 4,000 per 12-hour shift for a qualified nurse, Rs. 3,000 for an attendant. Book online in under 3 minutes or WhatsApp us at 0300-1234567.

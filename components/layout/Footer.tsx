@@ -12,13 +12,14 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <svg width="36" height="36" viewBox="0 0 200 200" fill="none">
-                <path d="M28 96 L100 36 L172 96" stroke="#B2DED9" strokeWidth="14" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M44 92 V158 a8 8 0 0 0 8 8 H148 a8 8 0 0 0 8 -8 V92" stroke="#B2DED9" strokeWidth="14" strokeLinejoin="round" fill="none"/>
-                <rect x="89" y="96" width="22" height="48" rx="3" fill="#0D7A6E"/>
-                <rect x="76" y="109" width="48" height="22" rx="3" fill="#0D7A6E"/>
+                <circle cx="100" cy="100" r="68" stroke="#B2DED9" strokeWidth="13" fill="none"/>
+                <circle cx="32" cy="100" r="7" fill="#B2DED9"/>
+                <circle cx="168" cy="100" r="7" fill="#B2DED9"/>
+                <path d="M32 100 L54 100 L63 86 L70 55 L82 125 L89 100 L98 100 Q106 74 115 100 L168 100"
+                  stroke="#0D7A6E" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
               </svg>
               <span style={{ color: "#fff", fontWeight: 700, fontSize: "17px" }}>
-                mySehatGhar
+                Sehat <span style={{ color: "#0D7A6E" }}>Connect</span>
               </span>
             </div>
             <p style={{ fontSize: "13px", lineHeight: "1.7", color: "#B2DED9" }}>
@@ -64,8 +65,8 @@ export default function Footer() {
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", color: "#B2DED9", display: "flex", alignItems: "center", gap: "8px" }} className="hover:text-white transition-colors">
                 💬 WhatsApp Us
               </a>
-              <a href="mailto:care@sehatghar.pk" style={{ fontSize: "13px", color: "#B2DED9", display: "flex", alignItems: "center", gap: "8px" }} className="hover:text-white transition-colors">
-                ✉ care@sehatghar.pk
+              <a href="mailto:care@sehat-connect.pk" style={{ fontSize: "13px", color: "#B2DED9", display: "flex", alignItems: "center", gap: "8px" }} className="hover:text-white transition-colors">
+                ✉ care@sehat-connect.pk
               </a>
             </div>
             <div style={{ marginTop: "20px" }}>
@@ -79,7 +80,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid #1A4A46", marginTop: "40px", paddingTop: "20px" }}
           className="flex flex-col md:flex-row justify-between items-center gap-3">
-          <p style={{ fontSize: "12px", color: "#5A7572" }}>© 2025 SehatGhar.pk — All rights reserved.</p>
+          <p style={{ fontSize: "12px", color: "#5A7572" }}>© 2025 Sehat Connect — All rights reserved.</p>
           <div className="flex gap-5">
             {[
               { href: "/about",   label: "About" },

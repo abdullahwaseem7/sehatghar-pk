@@ -6,10 +6,10 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { QUALIFIED_NURSE_SERVICES, PRICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Qualified Home Nurse in Lahore | PNC Registered | SehatGhar.pk",
+  title: "Qualified Home Nurse in Lahore | PNC Registered | Sehat Connect",
   description:
     "Book a PNC-registered qualified nurse at home in Lahore for post-op care, elderly care, ICU step-down, diabetic care and more. Rs. 4,000 per 12-hour shift. Call 0305-8489988.",
-  alternates: { canonical: "https://sehatghar-pk.vercel.app/services/qualified-nurse" },
+  alternates: { canonical: "https://mysehatconnect.com/services/qualified-nurse" },
 };
 
 export default function QualifiedNursePage() {

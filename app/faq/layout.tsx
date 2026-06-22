@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { FAQ_ITEMS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "FAQs | Home Nurse in Lahore | SehatGhar.pk",
+  title: "FAQs | Home Nurse in Lahore | Sehat Connect",
   description:
-    "Frequently asked questions about SehatGhar.pk home nursing service in Lahore. Pricing, verification, availability, and how to book a nurse or attendant at home.",
-  alternates: { canonical: "https://sehatghar-pk.vercel.app/faq" },
+    "Frequently asked questions about Sehat Connect home nursing service in Lahore. Pricing, verification, availability, and how to book a nurse or attendant at home.",
+  alternates: { canonical: "https://mysehatconnect.com/faq" },
 };
 
 const faqJsonLd = {

@@ -28,7 +28,7 @@ export default function LoginPage() {
                 <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
               </svg>
             </div>
-            <h1 style={{ fontSize: "20px", fontWeight: 700, color: "#0A2E2B" }}>Sign in to SehatGhar</h1>
+            <h1 style={{ fontSize: "20px", fontWeight: 700, color: "#0A2E2B" }}>Sign in to Sehat Connect</h1>
             <p style={{ fontSize: "13px", color: "#5A7572", marginTop: "4px" }}>
               {step === "phone" ? "Enter your phone number to receive an OTP" : `OTP sent to ${phone}`}
             </p>
