@@ -31,9 +31,9 @@ export const SHIFTS = [
   { id: 'night',   label: 'Night', time: '8:00 PM – 8:00 AM' },
 ];
 
-export const WHATSAPP_NUMBER = '923058489988';
-export const CONTACT_PHONE_DISPLAY = '0305-8489988';
-export const CONTACT_PHONE_TEL = '+923058489988';
+export const WHATSAPP_NUMBER = '923288489988';
+export const CONTACT_PHONE_DISPLAY = '0328-8489988';
+export const CONTACT_PHONE_TEL = '+923288489988';
 
 export const FAQ_ITEMS = [
   {

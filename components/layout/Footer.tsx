@@ -65,9 +65,6 @@ export default function Footer() {
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", color: "#B2DED9", display: "flex", alignItems: "center", gap: "8px" }} className="hover:text-white transition-colors">
                 💬 WhatsApp Us
               </a>
-              <a href="mailto:care@sehat-connect.pk" style={{ fontSize: "13px", color: "#B2DED9", display: "flex", alignItems: "center", gap: "8px" }} className="hover:text-white transition-colors">
-                ✉ care@sehat-connect.pk
-              </a>
             </div>
             <div style={{ marginTop: "20px" }}>
               <p style={{ fontSize: "12px", color: "#5A7572" }}>Currently serving</p>

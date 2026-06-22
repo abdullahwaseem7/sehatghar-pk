@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Sehat Connect",
   },
   description:
-    "Book a verified nurse or patient attendant at home in Lahore. PNC-registered qualified nurses and trained attendants for post-op care, elderly care, and more. Available 24/7. Call 0305-8489988.",
+    "Book a verified nurse or patient attendant at home in Lahore. PNC-registered qualified nurses and trained attendants for post-op care, elderly care, and more. Available 24/7. Call 0328-8489988.",
   keywords: [
     "home nurse Lahore",
     "nurse at home Lahore",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Sehat Connect",
     title: "Sehat Connect | Home Nursing Service in Lahore",
     description:
-      "Book a verified nurse or patient attendant at home in Lahore. PNC-registered, background-checked, available 24/7. Call 0305-8489988.",
+      "Book a verified nurse or patient attendant at home in Lahore. PNC-registered, background-checked, available 24/7. Call 0328-8489988.",
   },
   twitter: {
     card: "summary_large_image",

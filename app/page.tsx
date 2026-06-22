@@ -11,7 +11,7 @@ import CtaBanner from "@/components/home/CtaBanner";
 export const metadata: Metadata = {
   title: "Sehat Connect | Home Nursing Service in Lahore | Nurse at Home",
   description:
-    "Pakistan's trusted home nursing platform. Book a PNC-registered nurse or trained attendant at home in Lahore. Post-op care, elderly care, paediatric care — available 24/7. Call 0305-8489988.",
+    "Pakistan's trusted home nursing platform. Book a PNC-registered nurse or trained attendant at home in Lahore. Post-op care, elderly care, paediatric care — available 24/7. Call 0328-8489988.",
   alternates: { canonical: "https://mysehatconnect.com" },
 };
 
@@ -22,8 +22,8 @@ const jsonLd = {
   description:
     "Home nursing service in Lahore providing PNC-registered nurses and trained attendants for post-operative care, elderly care, paediatric care and more.",
   url: "https://mysehatconnect.com",
-  telephone: "+92-305-8489988",
-  email: "care@sehat-connect.pk",
+  telephone: "+92-328-8489988",
+  email: "",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Lahore",
@@ -45,7 +45,7 @@ const jsonLd = {
   openingHours: "Mo-Su 00:00-23:59",
   priceRange: "Rs. 3,000 - Rs. 4,000 per shift",
   sameAs: [
-    "https://wa.me/923058489988",
+    "https://wa.me/923288489988",
   ],
 };
 

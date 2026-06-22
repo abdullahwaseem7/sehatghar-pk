@@ -8,7 +8,7 @@ import { QUALIFIED_NURSE_SERVICES, PRICES } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Qualified Home Nurse in Lahore | PNC Registered | Sehat Connect",
   description:
-    "Book a PNC-registered qualified nurse at home in Lahore for post-op care, elderly care, ICU step-down, diabetic care and more. Rs. 4,000 per 12-hour shift. Call 0305-8489988.",
+    "Book a PNC-registered qualified nurse at home in Lahore for post-op care, elderly care, ICU step-down, diabetic care and more. Rs. 4,000 per 12-hour shift. Call 0328-8489988.",
   alternates: { canonical: "https://mysehatconnect.com/services/qualified-nurse" },
 };
 

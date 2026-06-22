@@ -5,9 +5,9 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL, WHATSAPP_NUMBER } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Sehat Connect | Home Nurse Lahore 0305-8489988",
+  title: "Contact Us | Sehat Connect | Home Nurse Lahore 0328-8489988",
   description:
-    "Contact Sehat Connect to book a home nurse or patient attendant in Lahore. Call or WhatsApp 0305-8489988. Available 24/7 for enquiries and bookings.",
+    "Contact Sehat Connect to book a home nurse or patient attendant in Lahore. Call or WhatsApp 0328-8489988. Available 24/7 for enquiries and bookings.",
   alternates: { canonical: "https://mysehatconnect.com/contact" },
 };
 
@@ -31,7 +31,6 @@ export default function ContactPage() {
               {[
                 { icon: "📞", label: "Phone",    val: CONTACT_PHONE_DISPLAY,  href: `tel:${CONTACT_PHONE_TEL}` },
                 { icon: "💬", label: "WhatsApp", val: CONTACT_PHONE_DISPLAY,  href: `https://wa.me/${WHATSAPP_NUMBER}` },
-                { icon: "✉",  label: "Email",    val: "care@sehat-connect.pk",    href: "mailto:care@sehat-connect.pk" },
                 { icon: "🕐", label: "Hours",    val: "24/7 — every day",     href: null },
               ].map(c => (
                 <div key={c.label} style={{ backgroundColor: "#fff", border: "0.5px solid #B2DED9", borderRadius: "12px", padding: "18px 20px", display: "flex", alignItems: "center", gap: "14px" }}>
@@ -55,7 +54,6 @@ export default function ContactPage() {
                 {[
                   { label: "Your Name", type: "text", placeholder: "Full name" },
                   { label: "Phone Number", type: "tel", placeholder: "03XX-XXXXXXX" },
-                  { label: "Email (Optional)", type: "email", placeholder: "you@example.com" },
                 ].map(f => (
                   <div key={f.label}>
                     <label style={{ fontSize: "12px", fontWeight: 600, color: "#5A7572", display: "block", marginBottom: "6px" }}>{f.label.toUpperCase()}</label>
