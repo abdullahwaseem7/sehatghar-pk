@@ -42,7 +42,7 @@ const SIGNALS = [
       </svg>
     ),
     label: "Background Screened",
-    desc: "Criminal &amp; reference checks on all caregivers",
+    desc: "Background checks on all caregivers",
   },
   {
     icon: (
