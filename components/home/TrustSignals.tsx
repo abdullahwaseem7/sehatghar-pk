@@ -63,7 +63,7 @@ export default function TrustSignals() {
           <h2 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 700, color: "#0A2E2B", marginBottom: "8px" }}>
             Why Choose Sehat Connect?
           </h2>
-          <p style={{ fontSize: "14px", color: "#5A7572" }}>Every caregiver is rigorously vetted so your family stays safe</p>
+          <p style={{ fontSize: "14px", color: "#5A7572" }}>Every nurse and attendant is verified and background checked before coming to your home</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
