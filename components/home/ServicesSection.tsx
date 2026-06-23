@@ -54,7 +54,7 @@ export default function ServicesSection() {
             <h2 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 700, color: "#0A2E2B", marginBottom: "6px" }}>
               Our Services
             </h2>
-            <p style={{ fontSize: "14px", color: "#5A7572" }}>Professional care tailored to your family&apos;s needs</p>
+            <p style={{ fontSize: "14px", color: "#5A7572" }}>Choose the right care for your family</p>
           </div>
 
           {/* Gender toggle — always visible */}
@@ -119,7 +119,7 @@ export default function ServicesSection() {
           <div>
             <span style={{ fontSize: "13px", fontWeight: 700, color: "#0A2E2B" }}>Not sure which to choose?</span>
             <p style={{ fontSize: "12px", color: "#5A7572", marginTop: "2px" }}>
-              Qualified Nurses perform clinical tasks. Attendants provide non-clinical personal care.
+              A Qualified Nurse handles medical tasks. An Attendant helps with daily care and personal support.
             </p>
           </div>
           <Link href="/services"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export default function CtaBanner() {
   return (
@@ -16,7 +17,7 @@ export default function CtaBanner() {
             className="hover:bg-[#EEF9F7] transition-colors">
             Book a Nurse Now
           </Link>
-          <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer"
+          <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
             style={{ border: "2px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: 600, fontSize: "14px", padding: "12px 28px", borderRadius: "8px", display: "inline-flex", alignItems: "center", gap: "8px" }}
             className="hover:bg-[#0A5E55] transition-colors">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="white">

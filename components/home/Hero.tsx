@@ -49,7 +49,7 @@ export default function Hero() {
               <span style={{ color: "#0D7A6E" }}>Right at Your Doorstep</span>
             </h1>
             <p style={{ fontSize: "15px", color: "#3D5E5A", lineHeight: 1.7, marginBottom: "28px", maxWidth: "480px" }}>
-              Connect with PNC-registered nurses and trained attendants for post-op care, elderly care, paediatric care, and more — verified, trusted, available 24/7.
+              Book a verified nurse or attendant at home in Lahore. PNC-registered, background checked, and available day and night.
             </p>
 
             {/* CTAs */}

@@ -15,7 +15,7 @@ const SIGNALS = [
       </svg>
     ),
     label: "CNIC Checked",
-    desc: "Full identity verification before every hire",
+    desc: "We check CNIC and references before hiring anyone",
   },
   {
     icon: (

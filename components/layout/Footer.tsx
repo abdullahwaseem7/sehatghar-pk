@@ -23,7 +23,7 @@ export default function Footer() {
               </span>
             </div>
             <p style={{ fontSize: "13px", lineHeight: "1.7", color: "#B2DED9" }}>
-              Professional nursing care, right at your doorstep. Verified nurses and attendants across Pakistan's major cities.
+              Verified nurses and attendants sent straight to your home in Lahore. Available day and night.
             </p>
             <div className="flex gap-3 mt-5">
               {/* WhatsApp */}
